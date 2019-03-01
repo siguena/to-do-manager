@@ -6,7 +6,7 @@
 //  Copyright © 2019 siguena. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public struct Constants {
     
@@ -16,5 +16,13 @@ public struct Constants {
     
     // Reuse Identifiers
     static let reuseIdentifierTaskCell = "TaskCell"
+    
+    // Category colours
+    static let colourTaskVeryLowPriority = "#79A700"
+    static let colourTaskLowPriority = "#C6DA02"
+    static let colourTaskMediumPriority = "#E2B400"
+    static let colourTaskHighPriority = "#F68B2C"
+    static let colourTaskVeryHighPriority = "#F5522D"
+    static let colourTaskNoPriority = "#FF6E83"
     
 }

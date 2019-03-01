@@ -16,6 +16,7 @@
 		1514829022286B6700007BC1 /* TaskDetailsScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1514828F22286B6700007BC1 /* TaskDetailsScreenVC.swift */; };
 		1514829222286BA400007BC1 /* SettingsScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1514829122286BA400007BC1 /* SettingsScreenVC.swift */; };
 		151482942228713D00007BC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151482932228713C00007BC1 /* Constants.swift */; };
+		151482972228FCD400007BC1 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151482962228FCD400007BC1 /* UIColorExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1514828F22286B6700007BC1 /* TaskDetailsScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsScreenVC.swift; sourceTree = "<group>"; };
 		1514829122286BA400007BC1 /* SettingsScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenVC.swift; sourceTree = "<group>"; };
 		151482932228713C00007BC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		151482962228FCD400007BC1 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +121,18 @@
 		15148295222874E100007BC1 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				1514829822290BBF00007BC1 /* Extensions */,
 				151482932228713C00007BC1 /* Constants.swift */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		1514829822290BBF00007BC1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				151482962228FCD400007BC1 /* UIColorExtention.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				151482762228637100007BC1 /* AppDelegate.swift in Sources */,
 				1514829022286B6700007BC1 /* TaskDetailsScreenVC.swift in Sources */,
 				1514827E2228637100007BC1 /* Task_Manager.xcdatamodeld in Sources */,
+				151482972228FCD400007BC1 /* UIColorExtention.swift in Sources */,
 				151482942228713D00007BC1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
