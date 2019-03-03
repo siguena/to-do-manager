@@ -30,4 +30,8 @@ public struct Constants {
     // Date format
     static let dateFormatString = "dd/MM/yyyy"
     
+    // Task status tableView section names
+    static let tableViewSectionNamePending = "Pending"
+    static let tableViewSectionNameCompleted = "Completed"
+    
 }

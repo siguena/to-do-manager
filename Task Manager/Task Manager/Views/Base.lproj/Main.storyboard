@@ -84,7 +84,7 @@
                     <connections>
                         <outlet property="taskTableView" destination="49D-2v-mbS" id="bsU-O7-3wo"/>
                         <segue destination="Zqt-N1-W1L" kind="show" identifier="ShowTaskDetailsSegue" id="EjX-cy-l0B"/>
-                        <segue destination="vGr-G4-ODg" kind="presentation" identifier="ShowSettingsSegue" id="feW-Mf-JR5"/>
+                        <segue destination="vGr-G4-ODg" kind="show" identifier="ShowSettingsSegue" id="feW-Mf-JR5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

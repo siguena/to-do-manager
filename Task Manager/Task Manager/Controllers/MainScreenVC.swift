@@ -49,13 +49,53 @@ class MainScreenVC: UIViewController, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedTask = dataManager.item(at: indexPath.row)
-        performSegue(withIdentifier: Constants.segueTaskDetails, sender: self)
+        
+        switch indexPath.section {
+        case 0:
+            selectedTask = dataManager.item(at: indexPath.row, in: .pending)
+            performSegue(withIdentifier: Constants.segueTaskDetails, sender: self)
+        default:
+            selectedTask = dataManager.item(at: indexPath.row, in: .completed)
+            let alert = UIAlertController(title: "Completed!", message: "Task is completed", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
         
         taskTableView.deselectRow(at: indexPath, animated: true)
     }
     
- 
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            
+            switch indexPath.section {
+                
+            case 0:
+                self.dataManager.delete(at: indexPath.row, in: .pending)
+                self.taskTableView.deleteRows(at: [indexPath], with: .fade)
+            default:
+                self.dataManager.delete(at: indexPath.row, in: .completed)
+                self.taskTableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+        
+        let doneAction = UITableViewRowAction(style: .normal, title: "Done") { (action, indexPath) in
+            
+            self.dataManager.completeTask(at: indexPath.row)
+            self.taskTableView.reloadData()
+        }
+        
+        switch indexPath.section {
+        case 0:
+            return [deleteAction, doneAction]
+        default:
+             return [deleteAction]
+        }
+        
+    }
+    
+
     private func setupNavigationView() {
          let settingsBtn = UIBarButtonItem(image: UIImage(named: "nav_bar_ic_settings"), style: .plain, target: self, action: #selector(navigateToScreen))
         settingsBtn.tag = 1

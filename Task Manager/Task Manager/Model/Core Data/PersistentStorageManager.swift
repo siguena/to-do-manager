@@ -48,6 +48,7 @@ class PersistentStorageManager {
             UserDefaults.standard.set(Int(taskId), forKey: "lastTaskId")
             task.title = title
             task.completionDate = date
+            task.completed = false
             
             for category in PersistentStorageManager.shared.loadCategories() where category.name == categoryName {
                 
@@ -63,15 +64,47 @@ class PersistentStorageManager {
         }
     }
     
-    public func loadTasks(searchParam: Int32? = nil) -> [Task] {
+    public func setCompleted(taskId: Int32) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+        
+        fetchRequest.predicate = NSPredicate(format: "id = %d", taskId)
+        
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            if !result.isEmpty {
+                
+                let taskToUpdate = result[0] as! Task
+                taskToUpdate.completed = true
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        
+        do {
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print(error)
+        }
+        
+    }
+    
+    public func loadTasks(byID id: Int32? = nil, isCompleted: Bool = false ) -> [Task] {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [] }
         let managedContext = appDelegate.persistentContainer.viewContext
         
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-        if let param = searchParam {
+        if let param = id {
             fetchRequest.predicate = NSPredicate(format: "id = %d", param)
         }
+        
+        fetchRequest.predicate = NSPredicate(format: "completed = %@", NSNumber(booleanLiteral: isCompleted))
         
         
         do {
