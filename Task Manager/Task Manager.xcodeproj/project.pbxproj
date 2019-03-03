@@ -17,6 +17,16 @@
 		1514829222286BA400007BC1 /* SettingsScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1514829122286BA400007BC1 /* SettingsScreenVC.swift */; };
 		151482942228713D00007BC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151482932228713C00007BC1 /* Constants.swift */; };
 		151482972228FCD400007BC1 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151482962228FCD400007BC1 /* UIColorExtention.swift */; };
+		1514829A22290F0200007BC1 /* TaskTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1514829922290F0200007BC1 /* TaskTableDataSource.swift */; };
+		1514829C2229117000007BC1 /* TaskViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1514829B2229117000007BC1 /* TaskViewTableViewCell.swift */; };
+		1514829F2229181500007BC1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1514829E2229181500007BC1 /* DataManager.swift */; };
+		151482A52229AAB800007BC1 /* PersistentStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151482A42229AAB800007BC1 /* PersistentStorageManager.swift */; };
+		151482A8222A4C3200007BC1 /* TaskNameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151482A7222A4C3200007BC1 /* TaskNameTextView.swift */; };
+		15CA1B6C222A5E78000A1C93 /* TaskCategoryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA1B6B222A5E78000A1C93 /* TaskCategoryTextField.swift */; };
+		15CA1B6E222A6B66000A1C93 /* TaskDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA1B6D222A6B66000A1C93 /* TaskDatePicker.swift */; };
+		15CA1B70222A6E2B000A1C93 /* DateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA1B6F222A6E2B000A1C93 /* DateExtention.swift */; };
+		15CA1B72222A7895000A1C93 /* TaskColourPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA1B71222A7895000A1C93 /* TaskColourPalette.swift */; };
+		15CA1B74222B9EE0000A1C93 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA1B73222B9EE0000A1C93 /* StringExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +42,16 @@
 		1514829122286BA400007BC1 /* SettingsScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenVC.swift; sourceTree = "<group>"; };
 		151482932228713C00007BC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		151482962228FCD400007BC1 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
+		1514829922290F0200007BC1 /* TaskTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableDataSource.swift; sourceTree = "<group>"; };
+		1514829B2229117000007BC1 /* TaskViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewTableViewCell.swift; sourceTree = "<group>"; };
+		1514829E2229181500007BC1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		151482A42229AAB800007BC1 /* PersistentStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageManager.swift; sourceTree = "<group>"; };
+		151482A7222A4C3200007BC1 /* TaskNameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNameTextView.swift; sourceTree = "<group>"; };
+		15CA1B6B222A5E78000A1C93 /* TaskCategoryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategoryTextField.swift; sourceTree = "<group>"; };
+		15CA1B6D222A6B66000A1C93 /* TaskDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDatePicker.swift; sourceTree = "<group>"; };
+		15CA1B6F222A6E2B000A1C93 /* DateExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtention.swift; sourceTree = "<group>"; };
+		15CA1B71222A7895000A1C93 /* TaskColourPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColourPalette.swift; sourceTree = "<group>"; };
+		15CA1B73222B9EE0000A1C93 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +108,8 @@
 		1514828B222863A800007BC1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				15CA1B75222BAD50000A1C93 /* TableView Cells */,
+				151482A6222A4C0800007BC1 /* UI Elements */,
 				151482792228637100007BC1 /* Main.storyboard */,
 				151482812228637400007BC1 /* LaunchScreen.storyboard */,
 			);
@@ -97,6 +119,7 @@
 		1514828C222863B800007BC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1514829D222917DB00007BC1 /* TableViewData */,
 				1514828D2228640100007BC1 /* Core Data */,
 			);
 			path = Model;
@@ -105,6 +128,7 @@
 		1514828D2228640100007BC1 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				151482A42229AAB800007BC1 /* PersistentStorageManager.swift */,
 				1514827C2228637100007BC1 /* Task_Manager.xcdatamodeld */,
 			);
 			path = "Core Data";
@@ -131,8 +155,38 @@
 			isa = PBXGroup;
 			children = (
 				151482962228FCD400007BC1 /* UIColorExtention.swift */,
+				15CA1B6F222A6E2B000A1C93 /* DateExtention.swift */,
+				15CA1B73222B9EE0000A1C93 /* StringExtention.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1514829D222917DB00007BC1 /* TableViewData */ = {
+			isa = PBXGroup;
+			children = (
+				1514829922290F0200007BC1 /* TaskTableDataSource.swift */,
+				1514829E2229181500007BC1 /* DataManager.swift */,
+			);
+			path = TableViewData;
+			sourceTree = "<group>";
+		};
+		151482A6222A4C0800007BC1 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				151482A7222A4C3200007BC1 /* TaskNameTextView.swift */,
+				15CA1B6B222A5E78000A1C93 /* TaskCategoryTextField.swift */,
+				15CA1B6D222A6B66000A1C93 /* TaskDatePicker.swift */,
+				15CA1B71222A7895000A1C93 /* TaskColourPalette.swift */,
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		15CA1B75222BAD50000A1C93 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1514829B2229117000007BC1 /* TaskViewTableViewCell.swift */,
+			);
+			path = "TableView Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,12 +260,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1514829C2229117000007BC1 /* TaskViewTableViewCell.swift in Sources */,
+				151482A8222A4C3200007BC1 /* TaskNameTextView.swift in Sources */,
+				15CA1B70222A6E2B000A1C93 /* DateExtention.swift in Sources */,
+				15CA1B6E222A6B66000A1C93 /* TaskDatePicker.swift in Sources */,
+				1514829F2229181500007BC1 /* DataManager.swift in Sources */,
+				15CA1B6C222A5E78000A1C93 /* TaskCategoryTextField.swift in Sources */,
 				151482782228637100007BC1 /* MainScreenVC.swift in Sources */,
 				1514829222286BA400007BC1 /* SettingsScreenVC.swift in Sources */,
+				15CA1B72222A7895000A1C93 /* TaskColourPalette.swift in Sources */,
+				15CA1B74222B9EE0000A1C93 /* StringExtention.swift in Sources */,
+				1514829A22290F0200007BC1 /* TaskTableDataSource.swift in Sources */,
 				151482762228637100007BC1 /* AppDelegate.swift in Sources */,
 				1514829022286B6700007BC1 /* TaskDetailsScreenVC.swift in Sources */,
 				1514827E2228637100007BC1 /* Task_Manager.xcdatamodeld in Sources */,
 				151482972228FCD400007BC1 /* UIColorExtention.swift in Sources */,
+				151482A52229AAB800007BC1 /* PersistentStorageManager.swift in Sources */,
 				151482942228713D00007BC1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        initialAppSetup()
+        
         return true
     }
 
@@ -88,6 +91,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    private func initialAppSetup() {
+        guard UserDefaults.standard.string(forKey: "isAppFirstLoad") == nil else { return }
+        
+            // Initial save default categories in persistent storage
+            PersistentStorageManager.shared.createInitialCategories()
+        
+            // Init sorage for task ids
+            UserDefaults.standard.set(0, forKey: "lastTaskId")
+        
+            UserDefaults.standard.set("notInitialLoad", forKey: "isAppFirstLoad")
+    }
 }
 

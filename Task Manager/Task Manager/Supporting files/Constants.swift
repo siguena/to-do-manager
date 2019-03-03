@@ -25,4 +25,9 @@ public struct Constants {
     static let colourTaskVeryHighPriority = "#F5522D"
     static let colourTaskNoPriority = "#FF6E83"
     
+    static let colourFallBackColour = "#FFFFFF"
+    
+    // Date format
+    static let dateFormatString = "dd/MM/yyyy"
+    
 }
