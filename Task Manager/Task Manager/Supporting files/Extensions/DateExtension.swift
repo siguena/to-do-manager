@@ -18,5 +18,10 @@ extension Date {
     var asString: String {
         return Date.formatter.string(from: self)
     }
+    
+    
+    static func offsetCurrentDate(by days: Int) -> Date {
+        return Calendar.current.date(byAdding: .day, value: days, to: Date())!
+    }
 }
 

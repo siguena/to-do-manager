@@ -41,11 +41,7 @@ class MainScreenVC: UIViewController, UITableViewDelegate {
                 
               vc.currentTask = selectedTask
             }
-        } else if segue.identifier == Constants.segueSettings{
-            if let vc = segue.destination as? SettingsScreenVC {
-                
-            }
-        }
+        } 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -56,10 +52,7 @@ class MainScreenVC: UIViewController, UITableViewDelegate {
             performSegue(withIdentifier: Constants.segueTaskDetails, sender: self)
         default:
             selectedTask = dataManager.item(at: indexPath.row, in: .completed)
-            let alert = UIAlertController(title: "Completed!", message: "Task is completed", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            presentAlert(title: "Completed!", message: "Task is completed", type: .information)
         }
         
         taskTableView.deselectRow(at: indexPath, animated: true)

@@ -34,4 +34,7 @@ public struct Constants {
     static let tableViewSectionNamePending = "Pending"
     static let tableViewSectionNameCompleted = "Completed"
     
+    // Local Storage containers
+    static let localStorageEnableNotifications = "enableNotifications"
+    
 }

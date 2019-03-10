@@ -27,6 +27,7 @@
 		15CA1B70222A6E2B000A1C93 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA1B6F222A6E2B000A1C93 /* DateExtension.swift */; };
 		15CA1B72222A7895000A1C93 /* TaskColourPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA1B71222A7895000A1C93 /* TaskColourPalette.swift */; };
 		15CA1B74222B9EE0000A1C93 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA1B73222B9EE0000A1C93 /* StringExtension.swift */; };
+		15EA5A4E2234CC1400F9C675 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EA5A4D2234CC1400F9C675 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		15CA1B6F222A6E2B000A1C93 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		15CA1B71222A7895000A1C93 /* TaskColourPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColourPalette.swift; sourceTree = "<group>"; };
 		15CA1B73222B9EE0000A1C93 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		15EA5A4D2234CC1400F9C675 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				151482962228FCD400007BC1 /* UIColorExtension.swift */,
 				15CA1B6F222A6E2B000A1C93 /* DateExtension.swift */,
 				15CA1B73222B9EE0000A1C93 /* StringExtension.swift */,
+				15EA5A4D2234CC1400F9C675 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				15CA1B74222B9EE0000A1C93 /* StringExtension.swift in Sources */,
 				1514829A22290F0200007BC1 /* TaskTableDataSource.swift in Sources */,
 				151482762228637100007BC1 /* AppDelegate.swift in Sources */,
+				15EA5A4E2234CC1400F9C675 /* UIViewControllerExtension.swift in Sources */,
 				1514829022286B6700007BC1 /* TaskDetailsScreenVC.swift in Sources */,
 				1514827E2228637100007BC1 /* Task_Manager.xcdatamodeld in Sources */,
 				151482972228FCD400007BC1 /* UIColorExtension.swift in Sources */,

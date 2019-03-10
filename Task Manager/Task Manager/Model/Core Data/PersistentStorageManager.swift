@@ -94,7 +94,8 @@ class PersistentStorageManager {
         
     }
     
-    public func loadTasks(byID id: Int32? = nil, isCompleted: Bool = false ) -> [Task] {
+    public func loadTasks(byID id: Int32? = nil, isCompleted: Bool = false, byDate: Date? = nil ) -> [Task] {
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [] }
         let managedContext = appDelegate.persistentContainer.viewContext
         
@@ -104,7 +105,18 @@ class PersistentStorageManager {
             fetchRequest.predicate = NSPredicate(format: "id = %d", param)
         }
         
-        fetchRequest.predicate = NSPredicate(format: "completed = %@", NSNumber(booleanLiteral: isCompleted))
+        let completedPredicate = NSPredicate(format: "completed = %@", NSNumber(booleanLiteral: isCompleted))
+
+        if let date = byDate {
+            let datePredicate = NSPredicate(format: "completionDate < %@ && completionDate > %@", date as NSDate, Date() as NSDate)
+            let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, datePredicate])
+            fetchRequest.predicate = andPredicate
+        } else {
+            fetchRequest.predicate = completedPredicate
+        }
+        
+    
+//        fetchRequest.predicate = NSPredicate(format: "completed = %@", NSNumber(booleanLiteral: isCompleted))
         
         
         do {

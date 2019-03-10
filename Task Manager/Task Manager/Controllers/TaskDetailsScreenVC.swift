@@ -74,14 +74,8 @@ class TaskDetailsScreenVC: UIViewController, ColourPaletteDelegate {
             return
         }
         
-        let alert = UIAlertController(title: "Remove task?", message: "Are you sure you want to remove task?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
-            PersistentStorageManager.shared.deleteTask(id: task.id)
-            self.navigationController?.popViewController(animated: true)
-        }))
+        presentAlert(title: "Remove task?", message: "Are you sure you want to remove task?", type: .deleteTask(taskID: task.id))
         
-        present(alert, animated: true)
     }
     
     @objc private func saveTask() {
@@ -92,15 +86,13 @@ class TaskDetailsScreenVC: UIViewController, ColourPaletteDelegate {
             navigationController?.popViewController(animated: true)
             
         } else {
-            let alert = UIAlertController(title: "Empty fields", message: "Please fill all empty fields and try again", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             
-            present(alert, animated: true)
+            presentAlert(title: "Empty fields", message: "Please fill all empty fields and try again", type: .information)
         }
     }
     
     private func validateFields() -> Bool {
-        if titleTextField.text != "" && categoryTextField.text != ""  && dueDateTextField.text != "" {
+        if titleTextField.text != "" && categoryTextField.text != "" {
             return true
         } else {
             return false
