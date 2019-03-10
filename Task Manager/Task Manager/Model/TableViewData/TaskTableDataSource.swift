@@ -12,6 +12,7 @@ class TaskTableDataSource: NSObject, UITableViewDataSource {
     
     private let dataManager: DataManager
     private let numberOfSection = 2
+    private let noDataLblText = "No scheduled tasks"
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
@@ -50,11 +51,29 @@ class TaskTableDataSource: NSObject, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return Constants.tableViewSectionNamePending
-        default:
-            return Constants.tableViewSectionNameCompleted
+        
+        if dataManager.getItemCount(in: .pending) == 0 && dataManager.getItemCount(in: .completed) == 0 {
+            
+            let noDataLbl = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLbl.textColor = .black
+            noDataLbl.textAlignment = .center
+            noDataLbl.text = noDataLblText
+            
+            tableView.backgroundView = noDataLbl
+            tableView.separatorStyle = .none
+            
+            return nil
+            
+        } else {
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
+            
+            switch section {
+            case 0:
+                return Constants.tableViewSectionNamePending
+            default:
+                return Constants.tableViewSectionNameCompleted
+            }
         }
     }
     
